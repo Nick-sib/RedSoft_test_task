@@ -2,7 +2,6 @@ package com.nickolay.redsofttesttask.data.provider
 
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import com.google.gson.Gson
 import com.nickolay.redsofttesttask.MainActivity
 import com.nickolay.redsofttesttask.data.entity.Products
@@ -14,12 +13,15 @@ import java.net.URL
 
 object ThreadProvider: DataProvider {
 
+    private const val TIMEOUT = 10000
+    private const val METHOD = "GET"
+
     private fun doRequest(url: URL) {
-        //Можно сделать через Retrofit или OkHttp, о нестоит бодить зависимости где это решается в одну вункцию
+        //Можно сделать через Retrofit или OkHttp, о нестоит плодить зависимости где это решается в одну функцию
         Thread {
-            val connection: HttpURLConnection = (url.openConnection() as (HttpURLConnection)).apply{
-                requestMethod = "GET"
-                connectTimeout = 10000
+            val connection: HttpURLConnection = (url.openConnection() as HttpURLConnection).apply{
+                requestMethod = METHOD
+                connectTimeout = TIMEOUT
             }
             try {
                 val inStream = BufferedReader(InputStreamReader(connection.inputStream))
@@ -29,7 +31,7 @@ object ThreadProvider: DataProvider {
                         result,
                         Products::class.java
                     )
-                    MainActivity.showme(r.data)
+                    MainActivity.showData(r.data)
                 }
             }  catch (e: Exception) {
                 //TODO: interface error reporting
