@@ -9,7 +9,7 @@ import kotlin.coroutines.CoroutineContext
 
 /*Для этого не большого проекта в одно активити создание базовых моделей излишне, но позволяет
  *выдедить функциональную механику*/
-class BaseViewModel <S>: ViewModel(), CoroutineScope {
+open class BaseViewModel <S>: ViewModel(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext by lazy {
         Dispatchers.Default + Job()
