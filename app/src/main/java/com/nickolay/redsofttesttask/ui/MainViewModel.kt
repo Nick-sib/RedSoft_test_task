@@ -1,12 +1,10 @@
-package com.nickolay.redsofttesttask
+package com.nickolay.redsofttesttask.ui
 
 import androidx.lifecycle.ViewModel
-import com.nickolay.redsofttesttask.data.entity.Product
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel.Factory.CONFLATED
 import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.consumeEach
 import kotlin.coroutines.CoroutineContext
 
 class MainViewModel<S>: ViewModel(), CoroutineScope {

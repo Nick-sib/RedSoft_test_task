@@ -1,4 +1,4 @@
-package com.nickolay.redsofttesttask.ui
+package com.nickolay.redsofttesttask.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
