@@ -24,7 +24,7 @@ class MainActivity : BaseActivity<List<Product>?>() {
 
 
         rv_products.adapter = ProductsRVAdapter{
-            Log.d("myLOG", "onCreate: ${it.id}")
+            Log.d("myLOG", "onCreate: $it")
         }
 
     }

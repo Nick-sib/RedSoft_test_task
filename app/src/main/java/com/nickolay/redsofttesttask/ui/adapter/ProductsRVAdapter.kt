@@ -27,8 +27,8 @@ class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null) : Recycle
     inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {
         fun bind(product: Product) {
-            containerView.tv_title.text = product.id.toString()
-            containerView.tv_text.text = product.title
+            containerView.tv_product_name.text = product.title
+            containerView.tv_product_price.text = "${product.price} ₽"
 
             itemView.setOnClickListener {
                 onItemClick?.invoke(product)
