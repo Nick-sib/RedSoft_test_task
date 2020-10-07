@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nickolay.redsofttesttask.R
 import com.nickolay.redsofttesttask.data.entity.Product
+import com.squareup.picasso.Picasso
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_product.view.*
 
@@ -27,10 +28,21 @@ class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null) : Recycle
     inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {
         fun bind(product: Product) {
+
+            Picasso.get()
+                .load(product.image_url)
+                //.placeholder(R.drawable.)
+                //.error(R.drawable.)
+                .fit()
+                .into(containerView.iv_image)
+
+            containerView.tv_product_category.text =
+                if (product.categories.isNotEmpty()) product.categories[0].title else "none"
             containerView.tv_product_name.text = product.title
+            containerView.tv_product_producer.text = product.producer
             containerView.tv_product_price.text = "${product.price} ₽"
 
-            itemView.setOnClickListener {
+            containerView.shoppingCart.setOnClickListener {
                 onItemClick?.invoke(product)
             }
         }
