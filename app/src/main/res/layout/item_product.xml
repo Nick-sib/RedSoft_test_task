@@ -5,58 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="14dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="2dp">
+    android:layout_margin="@dimen/card_margin"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevator">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="0dp"
-        android:padding="18dp">
+        android:padding="@dimen/card_padding">
 
         <ImageView
             android:id="@+id/iv_image"
-            android:layout_width="80dp"
-            android:layout_height="135dp"
-            android:src="@drawable/delme"
+            style="@style/CardImageStyle"
+            tools:src="@drawable/delme"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/product_image_description" />
 
         <TextView
             android:id="@+id/tv_product_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="7dp"
-            android:text="Категория 1.1.1.2."
-            android:textColor="#d0d0d0"
+            style="@style/CardProductCategoryStyle"
+            tools:text="Категория 1.1.1.2."
             app:layout_constraintStart_toEndOf="@+id/iv_image"
             app:layout_constraintTop_toTopOf="@+id/iv_image" />
 
-
         <TextView
             android:id="@+id/tv_product_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:text="Продукт 1"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#3a3a3a"
+            style="@style/CardProductNameStyle"
+            tools:text="Продукт 1"
             app:layout_constraintBottom_toTopOf="@id/tv_product_producer"
             app:layout_constraintStart_toEndOf="@+id/iv_image"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_category" />
 
         <TextView
             android:id="@+id/tv_product_producer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:textColor="#a7a7a7"
-            android:textStyle="bold"
-            android:text="Производитель 3"
+            style="@style/CardProductProducerStyle"
+            tools:text="Производитель 3"
             app:layout_constraintBottom_toTopOf="@id/tv_product_price"
             app:layout_constraintStart_toEndOf="@+id/iv_image"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
@@ -64,15 +48,8 @@
         <!--Пока только картинка-->
         <TextView
             android:id="@+id/tv_product_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="7dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="5507,02 ₽"
-            android:textColor="#3a55b7"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            style="@style/CardProductPriceStyle"
+            tools:text="5507,02 ₽"
             app:layout_constraintBottom_toBottomOf="@+id/iv_image"
             app:layout_constraintStart_toEndOf="@+id/iv_image" />
 

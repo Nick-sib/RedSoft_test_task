@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RedSoft test task</string>
+    <string name="product_image_description">product overview</string>
 </resources>

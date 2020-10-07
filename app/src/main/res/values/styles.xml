@@ -7,4 +7,53 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CardImageStyle">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">135dp</item>
+    </style>
+
+    <style name="CardProductCategoryStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/card_text_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/card_text_margin_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorProductCategoryText</item>
+    </style>
+
+    <style name="CardProductNameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/card_text_margin_start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorProductNameText</item>
+    </style>
+
+    <style name="CardProductProducerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/card_text_margin_start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorProductProducerText</item>
+    </style>
+
+    <style name="CardProductPriceStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/card_text_margin_start</item>
+        <item name="android:layout_marginBottom">@dimen/card_text_margin_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorProductPriceText</item>
+        <item name="fontFamily">sans-serif-condensed</item>
+    </style>
+
+
+
+
+
+
+
 </resources>

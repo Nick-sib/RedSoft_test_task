@@ -6,4 +6,10 @@
 
     <color name="colorSRC">#FFF</color>
     <color name="colorButton">#4150dd</color>
+
+    <color name="colorProductCategoryText">#a9a9a9</color>
+    <color name="colorProductNameText">#3a3a3a</color>
+    <color name="colorProductProducerText">#a7a7a7</color>
+    <color name="colorProductPriceText">#3a55b7</color>
+
 </resources>

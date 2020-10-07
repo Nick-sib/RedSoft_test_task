@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="def_margin">5dp</dimen>
+    <dimen name="card_margin">14dp</dimen>
+    <dimen name="card_radius">10dp</dimen>
+    <dimen name="card_elevator">1dp</dimen>
+    <dimen name="card_padding">18dp</dimen>
+
+    <dimen name="card_text_margin_start">19dp</dimen>
+    <dimen name="card_text_margin_vertical">7dp</dimen>
 </resources>
