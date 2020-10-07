@@ -1,4 +1,4 @@
-package com.nickolay.redsofttesttask.ui
+package com.nickolay.redsofttesttask.ui.main
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel

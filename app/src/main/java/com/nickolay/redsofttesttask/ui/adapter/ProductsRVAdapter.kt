@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_product.view.*
 
-class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null) : RecyclerView.Adapter<ProductsRVAdapter.ViewHolder>() {
+class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null, val onCharClick: ((Int) -> Unit)? = null) : RecyclerView.Adapter<ProductsRVAdapter.ViewHolder>() {
 
     var products: List<Product> = listOf()
         set(value) {
@@ -31,8 +31,7 @@ class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null) : Recycle
 
             Picasso.get()
                 .load(product.image_url)
-                //.placeholder(R.drawable.)
-                //.error(R.drawable.)
+                .error(R.drawable.ic_image_24)
                 .fit()
                 .into(containerView.iv_image)
 
@@ -42,8 +41,11 @@ class ProductsRVAdapter (val onItemClick: ((Product) -> Unit)? = null) : Recycle
             containerView.tv_product_producer.text = product.producer
             containerView.tv_product_price.text = "${product.price} ₽"
 
-            containerView.shoppingCart.setOnClickListener {
+           itemView.setOnClickListener {
                 onItemClick?.invoke(product)
+            }
+            containerView.shoppingCart.setOnClickListener() {
+                onCharClick?.invoke(it.id)
             }
         }
     }
